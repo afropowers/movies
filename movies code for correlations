@@ -1,0 +1,17 @@
+# Correlation and Scatter Plot - Budget vs. Score
+cor_bs <- cor(imdb_movies$budget_x, imdb_movies$score)
+plot(imdb_movies$budget_x, imdb_movies$score, main = "Budget vs. Score", xlab = "Budget", ylab = "Score")
+abline(lm(imdb_movies$score ~ imdb_movies$budget_x), col = "red")
+legend("topleft", paste("Correlation:", round(cor_bs, 2)), bty = "n")
+
+# Correlation and Scatter Plot - Revenue vs. Score
+cor_rs <- cor(imdb_movies$revenue, imdb_movies$score)
+plot(imdb_movies$revenue, imdb_movies$score, main = "Revenue vs. Score", xlab = "Revenue", ylab = "Score")
+abline(lm(imdb_movies$score ~ imdb_movies$revenue), col = "red")
+legend("topleft", paste("Correlation:", round(cor_rs, 2)), bty = "n")
+
+# Correlation and Scatter Plot - Budget vs. Revenue
+cor_br <- cor(imdb_movies$budget_x, imdb_movies$revenue)
+plot(imdb_movies$budget_x, imdb_movies$revenue, main = "Budget vs. Revenue", xlab = "Budget", ylab = "Revenue")
+abline(lm(imdb_movies$revenue ~ imdb_movies$budget_x), col = "red")
+legend("topleft", paste("Correlation:", round(cor_br, 2)), bty = "n")
